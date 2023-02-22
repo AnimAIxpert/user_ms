@@ -2,3 +2,5 @@
 flask
 pymongo
 dotenv
+hashlib
+flask_jwt_extended
