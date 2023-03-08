@@ -53,3 +53,8 @@ FLASK_RUN_PORT = 8000
 
 "date_added": "2014-01-22T14:56:59.301Z"
 pm.collectionVariables.set("token", pm.response.json()["access_token"]);
+
+
+Configuration des images du docker 
+docker build -t animaixpert/user_ms .
+docker images

@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request
 from flask_jwt_extended import JWTManager,get_jwt_identity,jwt_required,create_access_token
-from flask_bcrypt import Bcrypt
 from pymongo import MongoClient
 import os
 from dotenv import load_dotenv
@@ -10,7 +9,6 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 jwt = JWTManager(app)
-bcrypt = Bcrypt(app)
 app.config['JWT_SECRET_KEY'] = 'Your_Secret_Key'
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(days=1)
 load_dotenv()
