@@ -1,0 +1,31 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  mongo:
+    image: mongo
+    container_name: user_db
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: animaixpert
+      MONGO_INITDB_ROOT_PASSWORD: animaixpertadmin
+    ports:
+      - 27019:27017
+
+  user:
+    image: animaixpert/user_ms
+    container_name: myani_user_ms
+    restart: always
+    environment:
+      FLASK_APP: app.py
+      FLASK_ENV: development
+      FLASK_RUN_PORT: 8000
+      MONGO_USERNAME: animaixpert
+      MONGO_PASSWORD: animaixpertadmin
+      MONGO_DATABASE: animaixpert_users
+      MONGO_PORT: 27019
+      MONGO_HOST: localhost
+      MONGO_AUTH_SOURCE: admin
+    ports:
+      - 8000:8000

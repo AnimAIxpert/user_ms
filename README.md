@@ -8,6 +8,7 @@ pip install -r requirements.txt
 
 To run:
 
+
 flask --app app run
 
 or
@@ -15,6 +16,7 @@ or
 python -m flask --app app run
 
 Create user in mongodb:
+(si on utilise le docker)=> docker exec -it eb8 mongosh -u root -p
 
 use admin
 
@@ -56,5 +58,10 @@ pm.collectionVariables.set("token", pm.response.json()["access_token"]);
 
 
 Configuration des images du docker 
-docker build -t animaixpert/user_ms .
+docker build -t animaixpert/user_ms .   (on doit tjrs la faire après chaque modification de code )
 docker images
+docker run animaixpert/user_ms 
+
+lancer le container docker / mongo
+on a créer le fichier animaixpert.yml
+docker-compose -f animaixpert.yml up
