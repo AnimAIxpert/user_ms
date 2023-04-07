@@ -5,3 +5,4 @@ python-dotenv
 #hashlib
 flask_jwt_extended
 #smtplib
+gunicorn
