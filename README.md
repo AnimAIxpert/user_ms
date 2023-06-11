@@ -13,7 +13,7 @@ flask --app app run
 
 or
 
-python -m flask --app app run
+python3 -m flask --app app run
 
 Create user in mongodb:
 (si on utilise le docker)=> docker exec -it eb8 mongosh -u root -p
